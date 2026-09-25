@@ -37,6 +37,7 @@ export class AppointmentPage {
   private readonly appointmentTable: Locator;
   private readonly appointmentRows: Locator;
   private readonly deleteButton: Locator;
+  private readonly detailPatientName: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -65,7 +66,8 @@ export class AppointmentPage {
     this.successMessage = page.locator('.sh-bubble-body .sh-bubble-msg');
     this.appointmentTable = page.locator('table#DataTables_Table_0');
     this.appointmentRows = this.appointmentTable.locator('tbody tr');
-    this.deleteButton = page.locator('a[aria-label="Delete"]:visible');
+    this.deleteButton = page.locator('#viewModal a[onclick^="delete_record("]:visible');
+    this.detailPatientName = page.locator('#patient_names');
   }
 
   async selectAppointmentMenu(): Promise<void> {
@@ -129,10 +131,12 @@ export class AppointmentPage {
     await expect(appointmentRow).toBeVisible();
     await expect(appointmentRow.locator('td').first()).toContainText(`${patientName} (${patientId})`);
 
-    const appointmentActions = appointmentRow.locator('.rowoptionview');
-    await appointmentActions.hover();
-    await appointmentActions.locator('a[aria-label="Show"]').click();
+    const appointmentDetailsCell = appointmentRow.locator('td').last();
+    await appointmentDetailsCell.scrollIntoViewIfNeeded();
+    await appointmentDetailsCell.hover();
+    await appointmentDetailsCell.locator('a[aria-label="Show"]').click();
 
+    await expect(this.detailPatientName).toHaveText(`${patientName} (${patientId})`);
     await expect(this.deleteButton).toBeVisible();
     this.page.once('dialog', dialog => dialog.accept());
     await this.deleteButton.click();
