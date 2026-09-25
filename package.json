@@ -1,0 +1,23 @@
+{
+  "name": "playwrightpoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "playwright test --project=chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.3",
+    "exceljs": "^4.4.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.5.1",
+    "allure-playwright": "^3.12.2",
+    "typescript": "^7.0.2"
+  }
+}

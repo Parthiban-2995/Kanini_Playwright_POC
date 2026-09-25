@@ -1,0 +1,12 @@
+{
+    "validLogin": {
+        "username": "jason@gmail.com",
+        "password": "password",
+        "dashboardTitle": "Dashboard · Smart Hospital"
+    },
+    "invalidLogin": {
+        "username": "jason@gmail.com",
+        "password": "passwod",
+        "errorMessage": "Invalid Username or Password"
+    }
+}
