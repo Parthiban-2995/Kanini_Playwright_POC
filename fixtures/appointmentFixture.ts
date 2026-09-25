@@ -19,7 +19,6 @@ export const test = base.extend<AppointmentFixtures>({
       appointmentDetails: {
         doctor: 'Sansa Gomez (9008)',
         shift: 'Evening',
-        appointmentDate: '25/09/2026 12:43 PM',
         appointmentPriority: 'Normal',
         status: 'approved',
         discountPercentage: '10',

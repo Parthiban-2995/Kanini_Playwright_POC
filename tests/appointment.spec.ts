@@ -1,7 +1,7 @@
 import { test } from '../fixtures/appointmentFixture';
 
 test.describe.configure({mode:'serial'})
-test.only('Add Appointment', async ({ pages, appointmentData }) => {
+test('Add Appointment', async ({ pages, appointmentData }) => {
 
   
   await pages.appointmentPage.selectAppointmentMenu();

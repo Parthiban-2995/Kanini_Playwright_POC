@@ -4,7 +4,6 @@ import { DatePicker } from '../actions/DatePicker';
 export type appointmentDetails = {
   doctor: string;
   shift: string;
-  appointmentDate: string;
   appointmentPriority: string;
   status: string;
   discountPercentage: string;
