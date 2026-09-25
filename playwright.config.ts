@@ -12,7 +12,7 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30000,
   retries: 0,
-  workers : 1 ,
+  workers : process.env.CI ? 1 : undefined ,
   
   expect:{
   timeout: 30000
@@ -28,7 +28,7 @@ reporter: [
       use: {
         browserName: 'chromium',
         channel: 'chrome',
-        headless: false,
+        headless: !!process.env.CI,
         actionTimeout: 30000,
         navigationTimeout: 30000,
         screenshot: 'on',
