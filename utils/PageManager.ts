@@ -4,6 +4,7 @@ import { FrontOfficePage } from '../pageobjects/FrontOfficePage';
 import { Page } from '@playwright/test';
 import { PatientPage } from '../pageobjects/PatientPage';
 import { AppointmentPage } from '../pageobjects/AppointmentPage';
+import { SurveyFormPage } from '../pageobjects/SurveyFormPage';
 
 export class PageManager {
   readonly loginPage: LoginPage;
@@ -11,6 +12,7 @@ export class PageManager {
   readonly frontOfficePage: FrontOfficePage;
   readonly patientPage: PatientPage;
   readonly appointmentPage: AppointmentPage;
+  readonly surveyFormPage: SurveyFormPage;
 
   constructor(page: Page) {
     this.loginPage = new LoginPage(page);
@@ -18,5 +20,6 @@ export class PageManager {
     this.frontOfficePage = new FrontOfficePage(page);
     this.patientPage=new PatientPage(page);
     this.appointmentPage = new AppointmentPage(page);
+    this.surveyFormPage = new SurveyFormPage(page);
   }
 }
