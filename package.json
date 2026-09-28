@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:chrome": "playwright test --project=chrome"
+    "test:chrome": "playwright test --project=chrome",
+    "allure:generate": "npx allure generate ./allure-results --output ./allure-report",
+    "allure:open": "npx allure open ./allure-report"
   },
   "keywords": [],
   "author": "",

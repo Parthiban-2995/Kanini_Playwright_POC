@@ -10,6 +10,7 @@ import 'dotenv/config';
  */
 export default defineConfig({
   testDir: './tests',
+  globalSetup: './global-setup.ts',
   timeout: 30000,
   retries: 0,
   workers : process.env.CI ? 1 : undefined ,
