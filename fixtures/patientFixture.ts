@@ -7,7 +7,7 @@ type PatientFixtures = {
 };
 
 export const test = base.extend<PatientFixtures>({
-  patientData: async ({}, use) => {
+  patientData: async ({ }, use) => {
     await use({
       name: 'SARATH',
       guardianName: 'SURS',
@@ -16,14 +16,14 @@ export const test = base.extend<PatientFixtures>({
       DateOfBirth: '10/01/1995',
       bloodGroup: 'A+',
       martialStatus: 'married',
-    email: 'patient@gmail.com',
+      email: 'patient@gmail.com',
       address: 'PATIENT_ADDRESS',
       nationIdentificationMunber: 123456789,
       patientPhoto: path.join(
-                          process.cwd(),
-                          "test-data",
-                          "OIP.jpeg"
-                        )
+        process.cwd(),
+        "test-data",
+        "OIP.jpeg"
+      )
     });
   },
 });

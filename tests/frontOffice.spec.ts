@@ -2,7 +2,7 @@ import { test } from '../fixtures/frontOfficeFixture';
 
 
 
-test.describe.configure({mode:'serial'})
+test.describe.configure({ mode: 'serial' })
 test(" @smoke verify add visitor patient sucessfully ", async ({ pages, frontOfficeData }) => {
 
     // test.setTimeout(12000) // test timeout 

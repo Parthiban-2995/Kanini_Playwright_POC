@@ -16,7 +16,7 @@ type LoginFixtures = {
 };
 
 export const test = base.extend<LoginFixtures>({
-    loginData: async ({}, use) => {
+    loginData: async ({ }, use) => {
         await use({
             validLogin: {
                 username: environment.username,

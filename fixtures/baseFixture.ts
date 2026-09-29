@@ -7,6 +7,6 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
     pages: async ({ page }, use) => {
-	await use(new PageManager(page));
+        await use(new PageManager(page));
     },
 });

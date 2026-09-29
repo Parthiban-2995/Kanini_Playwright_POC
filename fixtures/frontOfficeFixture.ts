@@ -14,7 +14,7 @@ type FrontOfficeFixtures = {
 };
 
 export const test = base.extend<FrontOfficeFixtures>({
-    frontOfficeData: async ({}, use) => {
+    frontOfficeData: async ({ }, use) => {
         await use({
             addVisitor: {
                 purpose: "Seminar ",

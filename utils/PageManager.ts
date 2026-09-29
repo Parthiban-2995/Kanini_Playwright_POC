@@ -18,7 +18,7 @@ export class PageManager {
     this.loginPage = new LoginPage(page);
     this.dashboardPage = new DashboardPage(page);
     this.frontOfficePage = new FrontOfficePage(page);
-    this.patientPage=new PatientPage(page);
+    this.patientPage = new PatientPage(page);
     this.appointmentPage = new AppointmentPage(page);
     this.surveyFormPage = new SurveyFormPage(page);
   }

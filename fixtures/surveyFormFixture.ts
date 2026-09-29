@@ -11,7 +11,7 @@ type SurveyFormFixtures = {
 };
 
 export const test = base.extend<SurveyFormFixtures>({
-  surveyFormData: async ({}, use) => {
+  surveyFormData: async ({ }, use) => {
     await use({
       formTitle: `Patient Feedback ${Date.now()}`,
       description: 'Patient feedback form',

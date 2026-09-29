@@ -1,6 +1,6 @@
 import { test } from '../fixtures/loginFixture';
 
-test.describe.configure({mode:'parallel'})
+test.describe.configure({ mode: 'parallel' })
 test("@smoke verify the succesfully login with valid crendentials", async ({ pages, loginData }) => {
     await pages.loginPage.goTo()
     await pages.loginPage.validlogin(

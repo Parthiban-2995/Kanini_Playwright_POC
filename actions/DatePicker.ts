@@ -1,7 +1,7 @@
 import { type Page } from '@playwright/test';
 
 export class DatePicker {
-  constructor(private readonly page: Page) {}
+  constructor(private readonly page: Page) { }
 
   async selectDOB(date: string): Promise<void> {
     const [dayText, monthText, yearText] = date.split('/');
@@ -43,7 +43,7 @@ export class DatePicker {
         await previousButton.click();
       } else if (year > lastYear) {
         await nextButton.click();
-        
+
       } else {
         throw new Error(`Year '${year}' is not available in the datepicker.`);
       }

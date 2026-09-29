@@ -12,7 +12,7 @@ type AppointmentFixtures = {
 };
 
 export const test = base.extend<AppointmentFixtures>({
-  appointmentData: async ({}, use) => {
+  appointmentData: async ({ }, use) => {
     await use({
       patientName: 'SARATH',
       patientId: '1234',
