@@ -15,7 +15,7 @@ export const test = base.extend<AppointmentFixtures>({
   appointmentData: async ({ }, use) => {
     await use({
       patientName: 'SARATH',
-      patientId: '1234',
+      patientId: '1235',
       appointmentDetails: {
         doctor: 'Sansa Gomez (9008)',
         shift: 'Evening',
