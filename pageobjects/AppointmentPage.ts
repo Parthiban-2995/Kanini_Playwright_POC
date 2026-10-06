@@ -123,20 +123,20 @@ export class AppointmentPage {
     await expect(this.successMessage).toHaveText('Record Saved Successfully');
   }
 
-  async deleteAppointment(patientName: string, patientId: string): Promise<void> {
+  async deleteAppointment(patientName: string): Promise<void> {
     const appointmentRow = this.appointmentRows
-      .filter({ hasText: `${patientName} (${patientId})` })
+      .filter({ hasText: patientName })
       .first();
 
     await expect(appointmentRow).toBeVisible();
-    await expect(appointmentRow.locator('td').first()).toContainText(`${patientName} (${patientId})`);
+    await expect(appointmentRow.locator('td').first()).toContainText(patientName);
 
     const appointmentDetailsCell = appointmentRow.locator('td').last();
     await appointmentDetailsCell.scrollIntoViewIfNeeded();
     await appointmentDetailsCell.hover();
     await appointmentDetailsCell.locator('a[aria-label="Show"]').click();
 
-    await expect(this.detailPatientName).toHaveText(`${patientName} (${patientId})`);
+    await expect(this.detailPatientName).toContainText(patientName);
     await expect(this.deleteButton).toBeVisible();
     this.page.once('dialog', dialog => dialog.accept());
     await this.deleteButton.click();

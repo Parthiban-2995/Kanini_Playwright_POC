@@ -3,7 +3,6 @@ import type { appointmentDetails } from '../pageobjects/AppointmentPage';
 
 type AppointmentData = {
   patientName: string;
-  patientId: string;
   appointmentDetails: appointmentDetails;
 };
 
@@ -15,7 +14,6 @@ export const test = base.extend<AppointmentFixtures>({
   appointmentData: async ({ }, use) => {
     await use({
       patientName: 'SARATH',
-      patientId: '1235',
       appointmentDetails: {
         doctor: 'Sansa Gomez (9008)',
         shift: 'Evening',

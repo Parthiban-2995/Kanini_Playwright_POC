@@ -13,5 +13,5 @@ test('Add Appointment', async ({ pages, appointmentData }) => {
 
 test('Delete appointment', async ({ pages, appointmentData }) => {
   await pages.appointmentPage.selectAppointmentMenu();
-  await pages.appointmentPage.deleteAppointment(appointmentData.patientName, appointmentData.patientId);
+  await pages.appointmentPage.deleteAppointment(appointmentData.patientName);
 });
